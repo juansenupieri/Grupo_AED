@@ -1,7 +1,8 @@
-TRABAJO PRÁCTIVO N°3 
+# TRABAJO PRÁCTIVO N°3 
 
-INTEGRANTES DEL GRUPO:
-Juan Nupieri,
-Esteban Padilla,
-Luciano Perez,
-Germán Marino,
+__INTEGRANTES DEL GRUPO:__
+_- Juan Nupieri,_
+_- Esteban Padilla,_
+_- Luciano Perez,_
+_- Germán Marino,_
+_- Pablo Park,_
