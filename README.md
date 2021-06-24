@@ -6,3 +6,4 @@ __INTEGRANTES DEL GRUPO:__
 - _Luciano Perez,_
 - _Germán Marino,_
 - _Pablo Park,_
+- _Matias Vazquez,_
