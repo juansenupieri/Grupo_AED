@@ -21,7 +21,7 @@ int main()
 			cout << "Ingrese un anio valido, por favor: ";
 			cin >> anio;
 		}
-		if (esAnioBisiesto) 
+		if (esAnioBisiesto(anio)) 
         {
             cout<<endl;
 			cout << "El anio es bisiesto." << endl;
