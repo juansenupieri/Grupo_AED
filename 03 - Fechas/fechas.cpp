@@ -10,24 +10,26 @@ int main()
 {
 	int anio,bisi,mes;
 	
-    cout << "Este programa le permite saber si un anio es bisiesto y cuanto dias tiene el mes" << endl;
+    cout << "Este programa le permite saber si un anio es bisiesto y cuanto dias tiene el mes." << endl;
 	
     do {
         cout<<"------------------------------------"<<endl;
-        cout << "Ingrese a continuacion el anio:";
+        cout << "Ingrese a continuacion el anio: ";
 		cin >> anio;
 		while (anio<1582 ||anio>3021) 
         {
-			cout << "Ingrese un anio valido";
+			cout << "Ingrese un anio valido, por favor: ";
 			cin >> anio;
 		}
 		if (esAnioBisiesto) 
         {
-			cout << "el anio es bisiesto" << endl;
+            cout<<endl;
+			cout << "El anio es bisiesto." << endl;
 		} 
-        else 
+        else
         {
-			cout << "el anio no es bisiesto" << endl;
+            cout<<endl;
+			cout << "El anio NO es bisiesto." << endl;
 		}
         
         cout <<"--------------------------------"<<endl;
@@ -35,15 +37,17 @@ int main()
 		cin >> mes;
 		while (mes<0 || mes>12) 
         {
-			cout << "Ingrese un mes valido" << endl;
+			cout << "Ingrese un mes valido, por favor: ";
 			cin >> mes;
 		}
         int dias = diasDelMes(mes,anio);
+        cout<<endl;
         cout<<"Tiene "<<dias<<" dias :)"<<endl;
 	}
     while (!(anio==1582 && mes==0));
 
     assert(29 == diasDelMes(01,2021));
+
 	return 0;
 }
 
