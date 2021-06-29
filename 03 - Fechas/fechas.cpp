@@ -2,98 +2,94 @@
 #include<cassert>
 using namespace std;
 
+int ingresarAnio();
+
+int ingresarMes();
+
 int diasDelMes(int,int);
 
 bool esAnioBisiesto(int);
 
 int main() 
 {
-	int anio,bisi,mes;
-	
-    cout << "Este programa le permite saber si un anio es bisiesto y cuanto dias tiene el mes." << endl;
-	
-    do {
-        cout<<"------------------------------------"<<endl;
-        cout << "Ingrese a continuacion el anio: ";
-		cin >> anio;
-		while (anio<1582 ||anio>3021) 
-        {
-			cout << "Ingrese un anio valido, por favor: ";
-			cin >> anio;
-		}
-		if (esAnioBisiesto(anio)) 
-        {
-            cout<<endl;
-			cout << "El anio es bisiesto." << endl;
-		} 
-        else
-        {
-            cout<<endl;
-			cout << "El anio NO es bisiesto." << endl;
-		}
-        
-        cout <<"--------------------------------"<<endl;
-		cout << "Ingrese a continuacion el mes:";
-		cin >> mes;
-		while (mes<0 || mes>12) 
-        {
-			cout << "Ingrese un mes valido, por favor: ";
-			cin >> mes;
-		}
-        int dias = diasDelMes(mes,anio);
-        cout<<endl;
-        cout<<"Tiene "<<dias<<" dias :)"<<endl;
-	}
-    while (!(anio==1582 && mes==0));
+    cout << "< Este programa le permite saber si un anio es bisiesto y cuanto dias tiene el mes. >" << endl;
 
-    assert(29 == diasDelMes(01,2021));
+    int anio,mes;
+    anio = ingresarAnio();
 
+    cout<<endl;
+    esAnioBisiesto(anio)==true? cout<<"El anio es bisiesto."<<endl : cout<<"El anio NO es bisiesto."<<endl;
+    
+    mes = ingresarMes();
+
+    int dias = diasDelMes(mes,anio);
+
+    cout<<endl;
+    cout<<"Tiene "<<dias<<" dias :)"<<endl;
+
+    assert (29 == diasDelMes (2,2000));
+    assert (31 == diasDelMes (3,2000));
+    assert (30 == diasDelMes (6,2005));
+    assert (30 == diasDelMes (6,2021));
+
+    assert (true == esAnioBisiesto(2020));
+    assert (false == esAnioBisiesto(2021));
+    assert (false == esAnioBisiesto(3021));
+    assert (true == esAnioBisiesto(2000));
+    
 	return 0;
+}
+
+int ingresarAnio()
+{
+    //funcion para ingresar anios
+    int anio;
+    cout<<"------------------------------------"<<endl;
+    cout << "Ingrese a continuacion el anio: ";
+	cin >> anio;
+    if(anio<1582 or anio>3021)
+    {
+        cout<<endl;
+        cout<<"El anio no cumple los parametros."<<endl;
+        cout<<"Ingrese un anio con formato de 1582 al 3021."<<endl;
+        ingresarAnio();
+    }
+
+    return anio;
+}
+
+int ingresarMes()
+{
+    //función para ingresar meses
+    int mes;
+    cout <<"--------------------------------"<<endl;
+	cout << "Ingrese a continuacion el mes:";
+	cin >> mes;
+    if(mes<1 or mes>12)
+    {
+        cout<<endl;
+        cout<<"El mes no cumple los parametros."<<endl;
+        cout<<"Ingrese un mes con formato de 1 al 12."<<endl;
+        ingresarMes();
+    }
+    return mes;
 }
 
 int diasDelMes(int mes,int anio)
 {
-    // en principio son 31 dias 
+    //cuantos días tiene el mes?
     int dias=31;
-    // si es uno de los meses de 30 dias
-    if( mes==4 || mes==6 || mes==9 || mes==11 )
-        {
-            dias=30;
-        }
-    else
-        {
-            if( mes==2 ) // es febrero???
-                {
-                    // si el anio es bisiesto entonces son 29 dias
-                    if( esAnioBisiesto(anio) )
-                        {
-                            dias=29;
-                        }
-                    else
-                        {
-                            dias=28;
-                        }
-                }
-        }
+    mes==4 || mes==6 || mes==9 || mes==11? dias=30: 
+    (mes==2? (esAnioBisiesto(anio)? dias=29 : dias=28):
+    dias=31);
     return dias;
 }
 
 
 bool esAnioBisiesto(int anio)
 {
-    bool esBisiesto = false;
-
     // es divisible por 4?
-    if( anio%4==0 )
-        {
-            esBisiesto=true;
-        } 
-    else
-        {
-            if( anio%400==0 && anio%100!=0 )
-                {
-                    esBisiesto=true;
-                }
-        } 
+    bool esBisiesto;
+    anio%4!=0? esBisiesto=false:esBisiesto=true;
     return esBisiesto;
 }
