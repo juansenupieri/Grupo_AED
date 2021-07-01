@@ -1,1 +1,1 @@
-![Image of Formula](https://imgur.com/a/L3WBUZ9)
+![Image of Formula](file:///C:/Users/Lenovo/Desktop/Formula.png)
