@@ -47,6 +47,9 @@ int main()
 
 int ingresarAnio()
 {
+    //assert (true == ingresarAnio(2020));
+    //assert (false == ingresarAnio(1580));
+
     //funcion para ingresar anios
     int anio;
     cout<<"------------------------------------"<<endl;
