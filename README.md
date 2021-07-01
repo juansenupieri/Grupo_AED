@@ -1,4 +1,4 @@
-# Algoritmos y Estructuras de Datos
+# AED
 
 - **Curso:** K1051
 - **Año:** 2021
