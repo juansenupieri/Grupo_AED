@@ -7,3 +7,4 @@ __INTEGRANTES DEL GRUPO:__
 - _Germán Marino,_
 - _Pablo Park,_
 - _Matias Vazquez,_
+- _Nicolas Pelullo._
