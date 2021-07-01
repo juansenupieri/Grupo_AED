@@ -31,7 +31,6 @@ int main()
     cout<<endl;
     cout<<"Tiene "<<dias<<" dias :)"<<endl;
     cout<<"------------------------------------"<<endl;
-    cout<<"<< El programa ha terminado. >>"<<endl;
 
     assert (29 == diasDelMes (2,2000));
     assert (31 == diasDelMes (3,2000));
